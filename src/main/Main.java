@@ -1,55 +1,42 @@
 package main;
 
+import factory.BasicFactory;
+import factory.GamerFactory;
 import factory.LaptopFactory;
+import factory.ProfesionalFactory;
 import model.Laptop;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("--------------------------------------");
         System.out.println("BIENVENIDOS A LA FABRICA DE LAPTOPS");
-        System.out.println("--------------------------------------");
+        System.out.println();
 
-        LaptopFactory factory = new LaptopFactory();
-
-        Laptop gamer = factory.crearLaptop(
-                "gamer",
-                "MSI Katana 17",
-                2024,
-                "AMD Ryzen 9 8945HS",
-                17);
-
-        Laptop basica = factory.crearLaptop(
-                "basica",
-                "Acer Aspire 5",
-                2022,
-                "Intel Core i3-1215U",
-                15);
-
-        Laptop profesional = factory.crearLaptop(
-                "profesional",
-                "Dell XPS 15",
-                2024,
-                "Intel Core Ultra 9",
-                15);
+        // Laptop Gamer
+        LaptopFactory gamerFactory = new GamerFactory();
+        Laptop gamer = gamerFactory.crearLaptop();
 
         gamer.ejecutarPrueba();
-        System.out.println();
         gamer.mostrarDatos();
 
         System.out.println();
 
+        // Laptop Básica
+        LaptopFactory basicFactory = new BasicFactory();
+        Laptop basica = basicFactory.crearLaptop();
+
         basica.ejecutarPrueba();
-        System.out.println();
         basica.mostrarDatos();
 
         System.out.println();
 
+        // Laptop Profesional
+        LaptopFactory profesionalFactory = new ProfesionalFactory();
+        Laptop profesional = profesionalFactory.crearLaptop();
+
         profesional.ejecutarPrueba();
-        System.out.println();
         profesional.mostrarDatos();
 
     }
-
 }
