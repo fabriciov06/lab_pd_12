@@ -2,18 +2,12 @@ package model;
 
 public abstract class Laptop {
 
-    protected String nombreLaptop;
     protected String marcaModelo;
     protected int anioFabricacion;
     protected String procesador;
-    protected double tamanioPantalla;
+    protected int tamanioPantalla;
 
-    public Laptop(String nombreLaptop, String marcaModelo,
-                  int anioFabricacion,
-                  String procesador,
-                  double tamanioPantalla) {
-
-        this.nombreLaptop = nombreLaptop;
+    public Laptop(String marcaModelo, int anioFabricacion, String procesador, int tamanioPantalla) {
         this.marcaModelo = marcaModelo;
         this.anioFabricacion = anioFabricacion;
         this.procesador = procesador;
@@ -21,8 +15,6 @@ public abstract class Laptop {
     }
 
     public void mostrarDatos() {
-
-        System.out.println(nombreLaptop);
         System.out.println("Marca y Modelo: " + marcaModelo);
         System.out.println("Año de Fabricación: " + anioFabricacion);
         System.out.println("Procesador: " + procesador);
@@ -30,5 +22,4 @@ public abstract class Laptop {
     }
 
     public abstract void ejecutarPrueba();
-
 }
